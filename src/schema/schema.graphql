@@ -1,0 +1,13 @@
+type Item {
+  id: ID
+  title: String
+  desc: String
+  modId: String
+  modDt: String
+  regId: String
+  regDt: String
+}
+
+type Query {
+  list: [Item]
+}

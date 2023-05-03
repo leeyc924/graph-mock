@@ -1,12 +1,4 @@
-interface Item {
-  id: string;
-  title: string;
-  desc: string;
-  modId: string;
-  modDt: string;
-  regId: string;
-  regDt: string;
-}
+import { Item } from "@@types";
 
 export const todoList: Item[] = [
   {

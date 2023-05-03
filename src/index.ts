@@ -5,31 +5,10 @@ import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { todoList } from './db/todo';
+import typeDefs from './schema';
+import { resolvers } from './resolver';
 
 const port = process.env.PORT || 8006;
-
-const typeDefs = `
-  type Item {
-    id: String
-    title: String
-    desc: String
-    modId: String
-    modDt: String
-    regId: String
-    regDt: String
-  }
-
-  type Query {
-    list: [Item]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    list: () => todoList,
-  },
-};
 
 async function configApp() {
   const app = express();
